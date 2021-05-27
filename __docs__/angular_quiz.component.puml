@@ -1,0 +1,46 @@
+@startuml
+
+  App --- Game
+  App --- MainHeader
+  App --- Footer
+
+  Game *--- QuestionHeader 
+  Game *--- AnswersList
+  Game *--- GameControls
+  Game *--- GameProgressBar
+
+  class App <component> {}
+
+  class MainHeader <component> {
+    + title:string
+    + lead:string 
+  }
+
+  class QuestionHeader <component> {
+    + question:string
+    + difficulty:string
+    + category:string
+  }
+
+class GameService <service> {
+      - currentQuestion:Question
+      - questionList:Array<Question>
+      - numberOfQuestion:number
+      - questions:Array
+      - correctAnswers:number
+      - wrongAnswars:number
+      ' imposta la partita imposta la pria domanda
+      + prepareGame()
+      + getCurrentQuestion()
+      + goToNextQuestion()
+      + goToPrevius()
+      + islastQuestion()
+      + getGameResult()
+  }
+
+
+  class Game <component>
+  class GameControls <component>
+  class GameProgressBar <component>
+  class AnswersList <component>
+@enduml

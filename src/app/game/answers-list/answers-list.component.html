@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+
+
+<div class="list-group">
+
+  <div *ngFor="let item of list;index as i" (click)="onClickHandler(item)" [ngClass]="getActiveClass(item)"
+    class="list-group-item">
+
+
+    <span class="">{{i+1}}</span> {{item}}
+  </div>
+
+</div>
+=======
+<div class="list-group">
+   
+    <div *ngFor="let item of list;index as i" 
+      (click) = "onClickHandler(item)" 
+        [ngClass]="isActive(item)"
+        class="list-group-item">
+      <span class="">{{i+1}}</span> {{item}}
+    </div>
+   
+  </div>
+
+  
+>>>>>>> 9ac875c95805b360fb0d7638f86ffa9cc0f8f55f
